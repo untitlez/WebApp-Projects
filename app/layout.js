@@ -1,9 +1,7 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar/navbar";
 import "./globals.css";
 
 export const metadata = {
-  charset: "utf-8",
-  viewport: "width=device-width, initial-scale=1",
   title: "Coffee Shop",
   description: "E-Commerce",
 };
