@@ -19,12 +19,14 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  transition: background-color 0.3s, color 0.3s;
   
   min-width: 320px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-optical-sizing: auto;
@@ -72,6 +74,10 @@ ul,p {
 .box2 {
   border-width: 1px;
   border-color: black;
+}
+
+.fill {
+  @apply max-w-screen-xl w-full 
 }
 
 .ctf {

@@ -1,23 +1,22 @@
-export default function Card() {
+export default  function Card({ title, description, image, flavor, weight, price }) {
   return (
     <>
-      <div className="w-full lg:grid-cols-3">
         <div className="card glass w-96">
           <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="car!"
-            />
+            <img src={image} alt={title}/>
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Life hack</h2>
-            <p>How to park your car at your garage?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Learn now!</button>
+            <h2 className="card-title">{title}</h2>
+            <p>{description}</p>
+            <p>Favor : {flavor}</p>
+            <p>{weight} g.</p>
+            <div className="card-actions justify-between items-baseline">
+              <p>{price} $</p>
+              <button 
+              className="btn btn-primary">Add to Cart</button>
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }

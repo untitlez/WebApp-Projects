@@ -1,8 +1,9 @@
 export default function Theme() {
+   
   return (
     <>
-      {" "}
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle ">
+      <button tabIndex={0} role="button"
+      className="btn btn-ghost btn-circle">
         <div className="rounded-full">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
@@ -27,7 +28,7 @@ export default function Theme() {
             </svg>
           </label>
         </div>
-      </div>
+      </button>
     </>
   );
 }
