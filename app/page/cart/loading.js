@@ -1,7 +1,7 @@
 export default function loading() {
   return (
     <>
-        <div>Loading ...</div>
+      <div className=" my-12">Loading ...</div>
     </>
-  )
+  );
 }

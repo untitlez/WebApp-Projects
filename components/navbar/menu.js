@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Menu() {
   return (
     <>
@@ -23,13 +25,10 @@ export default function Menu() {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
         >
           <li>
-            <a>Homepage</a>
+            <Link href="/">Attraction</Link>
           </li>
           <li>
-            <a>Portfolio</a>
-          </li>
-          <li>
-            <a>About</a>
+            <Link href="/page/product">Product</Link>
           </li>
         </ul>
       </div>
