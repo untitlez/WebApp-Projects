@@ -1,19 +1,11 @@
 "use client";
 
-import { fetchData } from "@/app/lib/api";
-import { useState } from "react";
-
 export default function Login() {
-  const [input, setInput] = useState([]);
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setInput(e.target.value);
-  };
 
   return (
     <>
       <div className="card bg-base-100 max-w-lg shadow-2xl ">
-        <form className="card-body" onSubmit={onSubmit}>
+        <form className="card-body" >
           <p className="font-semibold text-5xl text-center">Login</p>
           <div className="form-control">
             <label className="label label-text">Email</label>
