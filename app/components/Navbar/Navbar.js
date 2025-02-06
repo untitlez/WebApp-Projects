@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MenuNav from "./MenuBar";
+import MenuBar from "./MenuBar";
 import Avatar from "./Avatar";
 
 export default function Navbar() {
@@ -10,7 +10,7 @@ export default function Navbar() {
         <nav className="navbar max-w-screen-xl pr-4">
           <div className="navbar-start">
             <div className="lg:hidden">
-              <MenuNav />
+              <MenuBar/>
             </div>
             <ul
               tabIndex={0}
@@ -26,7 +26,9 @@ export default function Navbar() {
           </div>
 
           <div className="navbar-end">
-            <Link href={"/"}><Avatar /></Link>
+            <Link href={"/"}>
+              <Avatar/>
+            </Link>
           </div>
         </nav>
       </div>

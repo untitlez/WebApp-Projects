@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "ecommerce",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,13 +11,10 @@
   "dependencies": {
     "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "swr": "^2.3.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "22.12.0",
-    "@types/react": "19.0.8",
     "daisyui": "^4.12.23",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",

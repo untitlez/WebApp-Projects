@@ -1,4 +1,4 @@
-import CardProduct from "../../components/Card/CardProduct";
+import CardProduct from "@/app/components/card/CardProduct";
 
 async function getData() {
   const res = await fetch("https://fake-coffee-api.vercel.app/api");
@@ -13,7 +13,7 @@ export default async function ProductPage() {
       <div className="fill">
         <p className="text-5xl font-semibold pl-4 mt-8">Product</p>
         <div className="flex flex-wrap justify-evenly gap-10 my-8">
-          <CardProduct data={data} />
+          <CardProduct data={data}/>
         </div>
       </div>
     </>
