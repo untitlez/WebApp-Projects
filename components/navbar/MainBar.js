@@ -1,8 +1,8 @@
 import Link from "next/link";
-import MenuNav from "./MenuNav";
+import MenuNav from "./MenuBar";
 import Avatar from "./Avatar";
 
-export default function Navbar() {
+export default function MainBar() {
   return (
     <>
       {/* Desktop  */}

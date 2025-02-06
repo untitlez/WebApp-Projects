@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
+import MainBar from "@/components/Navbar/MainBar";
 
 export const metadata = {
   title: "Coffee Shop",
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar/>
+        <MainBar/>
         {children}
       </body>
     </html>

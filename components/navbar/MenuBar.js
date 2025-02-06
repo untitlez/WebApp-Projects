@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function MenuNav() {
+export default function MenuBar() {
   return (
     <>
       <div className="dropdown">
