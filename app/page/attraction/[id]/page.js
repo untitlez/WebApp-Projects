@@ -1,14 +1,14 @@
-async function getData(params) {
-  const response = await fetch(`https://www.melivecode.com/api/attractions/${params.id}`);
-  if (!response.ok) throw new Error("Fail to GET data");
-  return await response.json();
-}
+import Navbar from "@/components/Navbar/Navbar";
+
 
 export default async function AttractionIdPage({ params }) {
-  const data = await getData(params);
+ const response = await fetch(`https://www.melivecode.com/api/attractions/${params.id}`);
+  if (!response.ok) throw new Error("Fail to GET data");
+  const data = await response.json();
 
   return (
     <>
+    <Navbar/>
       <div className="fill h-screen my-8">
         <div className="card glass w-full max-w-3xl">
           <figure>

@@ -1,5 +1,4 @@
 import CardAttraction from "@/components/Card/CardAttraction";
-import Link from "next/link";
 
 async function getData() {
   const response = await fetch("https://www.melivecode.com/api/attractions");

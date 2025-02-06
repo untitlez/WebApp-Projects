@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/Navbar";
 import CardProduct from "../../../components/Card/CardProduct";
 
 async function getData() {
@@ -10,6 +11,7 @@ export default async function ProductPage() {
   const data = await getData();
   return (
     <>
+    <Navbar/>
       <div className="fill">
         <p className="text-5xl font-semibold pl-4 mt-8">Product</p>
         <div className="flex flex-wrap justify-evenly gap-10 my-8">
