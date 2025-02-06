@@ -1,17 +1,16 @@
-import Navbar from "@/components/Navbar/Navbar";
 
 async function fetchParams(params) {
-  const response = await fetch(`https://fake-coffee-api.vercel.app/api/${params.id}`)
+  const { id } = await params;
+  const response = await fetch(`https://fake-coffee-api.vercel.app/api/${id}`)
   if (!response.ok) throw new Error("Failed to fetch data");
   return await response.json();
 }
 
 export default async function ProductIdPage({ params }) {
   const data = await fetchParams(params)
-
+console.log(data);
   return (
     <>
-    <Navbar/>
     <div className="fill h-screen my-8">
     {data.map((item)=>(
         <div key={item.id} className="card bg-base-100 border border-base-content flex-row" >

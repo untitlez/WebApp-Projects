@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar/Navbar";
 
 export default async function AttractionIdPage({ params }) {
   const { id } = await params;
@@ -8,7 +7,6 @@ export default async function AttractionIdPage({ params }) {
 
   return (
     <>
-      <Navbar />
       <div className="fill h-screen my-8">
         <div className="card glass w-full max-w-3xl">
           <figure>
