@@ -13,7 +13,7 @@ export default function CardAttraction({ data }) {
               <p className="card-title">{i.name}</p>
               <p>{i.detail}</p>
               <Link
-                href={"/page/attraction/" + i.id}
+                href={"/page/attraction/"+ i.id}
                 className="btn btn-primary mt-6"
               >
                 See More

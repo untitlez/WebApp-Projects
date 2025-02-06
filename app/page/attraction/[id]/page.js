@@ -1,14 +1,14 @@
 import Navbar from "@/components/Navbar/Navbar";
 
-
 export default async function AttractionIdPage({ params }) {
- const response = await fetch(`https://www.melivecode.com/api/attractions/${params.id}`);
+  const { id } = await params;
+  const response = await fetch(`https://www.melivecode.com/api/attractions/${id}`);
   if (!response.ok) throw new Error("Fail to GET data");
   const data = await response.json();
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="fill h-screen my-8">
         <div className="card glass w-full max-w-3xl">
           <figure>

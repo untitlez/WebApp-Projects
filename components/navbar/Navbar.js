@@ -17,7 +17,7 @@ export default function Navbar() {
               className="menu rounded-box p-2 shadow hidden md:flex flex-row "
             >
               <li>
-                <Link href={"/"}>Attraction</Link>
+                <Link href={"/page/attraction"}>Attraction</Link>
               </li>
               <li>
                 <Link href={"/page/product"}>Product</Link>
