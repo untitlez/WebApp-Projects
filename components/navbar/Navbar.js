@@ -2,7 +2,7 @@ import Link from "next/link";
 import MenuNav from "./MenuBar";
 import Avatar from "./Avatar";
 
-export default function MainBar() {
+export default function Navbar() {
   return (
     <>
       {/* Desktop  */}
