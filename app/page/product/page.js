@@ -1,15 +1,19 @@
-import { fetchData } from "@/app/api/route";
-import Card from "../../../components/card";
+import CardProduct from "../../../components/Card/CardProduct";
 
-export default async function page() {
-  const data = await fetchData();
+async function getData() {
+  const res = await fetch("https://fake-coffee-api.vercel.app/api");
+  if (!res.ok) throw new Error("Failed to fetch data");
+  return res.json();
+}
 
+export default async function ProductPage() {
+  const data = await getData();
   return (
     <>
       <div className="fill">
-        <h2>Product</h2>
-        <div className=" flex flex-wrap justify-evenly gap-10 my-8">
-          <Card data={data} />
+        <p className="text-5xl font-semibold pl-4 mt-8">Product</p>
+        <div className="flex flex-wrap justify-evenly gap-10 my-8">
+          <CardProduct data={data} />
         </div>
       </div>
     </>

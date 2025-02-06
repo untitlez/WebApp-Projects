@@ -1,32 +1,34 @@
 async function fetchParams(params) {
-  const res = await fetch(`https://fake-coffee-api.vercel.app/api/${params.id}`)
-  if (!res.ok) throw new Error("Failed to fetch data");
-  return await res.json();
+  const response = await fetch(`https://fake-coffee-api.vercel.app/api/${params.id}`)
+  if (!response.ok) throw new Error("Failed to fetch data");
+  return await response.json();
 }
 
-export default async function page({ params }) {
+export default async function ProductIdPage({ params }) {
   const data = await fetchParams(params)
 
   return (
     <>
-      {data.map((item)=>(
-        <div key={item.id} className="card glass flex-row fill" >
+    <div className="fill h-screen my-8">
+    {data.map((item)=>(
+        <div key={item.id} className="card bg-base-100 border border-base-content flex-row" >
           <figure>
             <img src={item.image_url} alt={item.name} width={750}/>
           </figure>
-          <div className="card-body gap-4">
-                <h2 className="card-title ">{item.name}</h2>
+          <div className="flex flex-col justify-between p-16">
+                <h2 className="card-title mb-8">{item.name}</h2>
                 <p>{item.description}</p>
                 <p>Favor : {item.flavor_profile}</p>
                 <p>grind : {item.grind_option}</p>
                 <p>region: {item.region}</p>
-            <div className="card-actions justify-between items-baseline">
+            <div className="card-actions justify-between items-baseline mt-8">
               <p>{item.weight} g.</p>
-              <button className="btn btn-primary">{item.price} $</button>
+              <button className="btn btn-outline btn-accent">{item.price} $</button>
             </div>
           </div>
         </div>
       ))}
+    </div>
     </>
   );
 }
