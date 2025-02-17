@@ -6,8 +6,6 @@ export default function Profile({ data }) {
   const [edit, setEdit] = useState(true);
   const [onChange, setOnChange] = useState([]);
 
-  console.log(edit);
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };

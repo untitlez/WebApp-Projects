@@ -2,7 +2,7 @@ import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Shopping",
+  title: "ลำบากวันนี้ พรุ่งนี้ก็ลำบาก",
   description: "E-Commerce",
 };
 

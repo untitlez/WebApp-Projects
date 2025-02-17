@@ -26,7 +26,7 @@ export default function Navbar(params) {
           </div>
 
           <div className="navbar-end">
-            <Link href={"/page/profile"}>
+            <Link href={"/"}>
               <Avatar/>
             </Link>
           </div>

@@ -5,7 +5,6 @@ export default async function UserPageId({params}) {
   const response = await axios.get(`https://679348b45eae7e5c4d8e2507.mockapi.io/user/${params.id}`)
   const info = response.data
 
-  // console.log(data);
 return (
     <>
       <div className="fill flex justify-center py-8">

@@ -1,7 +1,6 @@
 'use client'
 
-import { redirect } from "next/navigation";
-import {  useState } from "react";
+import { useState } from "react";
 
 export default function Login() {
   const [form, setForm] = useState({
@@ -15,9 +14,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
     alert("Login Success")
-    redirect('/page/profile')
   }
 
 
