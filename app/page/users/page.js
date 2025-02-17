@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export default async function UsersPage() {
-  const response = await fetch('https://679348b45eae7e5c4d8e2507.mockapi.io/user', {next: { revalidate: 10 }})
-  const data = response.json();
-
+  const response = await fetch('https://679348b45eae7e5c4d8e2507.mockapi.io/user', {next: { revalidate: 3 }})
+  const data = await response.json();
+   
 return (
     <>
       <div className="overflow-x-auto my-8">

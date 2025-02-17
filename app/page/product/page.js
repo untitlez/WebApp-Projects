@@ -3,7 +3,6 @@ import CardProduct from "@/app/components/product/CardProduct";
 
 export default async function ProductPage() {
   const res = await fetch(API_URL);
-  if(!res.ok) throw new Error("Fail to fetch data");
   const data = await res.json();
 
 return (

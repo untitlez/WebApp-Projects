@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import axios from "axios";
 import UserEdit from "./UserEdit";
 import Link from "next/link";
 
