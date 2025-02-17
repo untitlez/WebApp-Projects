@@ -3,7 +3,7 @@ import AddProduct from "@/app/components/product/AddProduct";
 import Link from "next/link";
 
 export default async function ProductPageId({ params }) {
-  const res = await fetch(`${API_URL}/${params.id}`, { cache:"force-cache" })
+  const res = await fetch(`${API_URL}/${params.id}`)
   if(!res.ok) throw new Error("Fail to fetch id");
   const data = await res.json();
 

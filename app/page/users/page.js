@@ -1,9 +1,8 @@
-import axios from "axios";
 import Link from "next/link";
 
 export default async function UsersPage() {
-  const response = await axios.get("https://679348b45eae7e5c4d8e2507.mockapi.io/user");
-  const data = response.data;
+  const response = await fetch('https://679348b45eae7e5c4d8e2507.mockapi.io/user', {next: { revalidate: 10 }})
+  const data = response.json();
 
 return (
     <>
