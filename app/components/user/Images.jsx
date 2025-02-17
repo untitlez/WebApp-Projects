@@ -1,0 +1,20 @@
+export default function Images() {
+  return (
+    <>
+      <div className="dropdown">
+        <button tabIndex={0} className="btn m-1">Change Picture</button>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+        >
+          <li>
+            <img src="/avatar/ace.jpg" alt="" />
+          </li>
+          <li>
+            <a>Item 2</a>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+}

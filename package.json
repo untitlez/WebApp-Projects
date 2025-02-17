@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
+    "axios": "^1.7.9",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/node": "22.13.4",
+    "@types/react": "19.0.8",
     "daisyui": "^4.12.23",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",

@@ -1,7 +1,7 @@
-export default function loading() {
+export default function Loading() {
     return (
       <>
-        <div className="my-96 h-screen ">Loading ...</div>
+        <div className="fill h-[768] grid place-content-center">Loading ...</div>
       </>
     );
   }

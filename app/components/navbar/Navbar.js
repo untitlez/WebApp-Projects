@@ -2,7 +2,7 @@ import Link from "next/link";
 import MenuBar from "./MenuBar";
 import Avatar from "./Avatar";
 
-export default function Navbar() {
+export default function Navbar(params) {
   return (
     <>
       {/* Desktop  */}
@@ -17,7 +17,7 @@ export default function Navbar() {
               className="menu rounded-box p-2 shadow hidden md:flex flex-row "
             >
               <li>
-                <Link href={"/page/attraction"}>Attraction</Link>
+                <Link href={"/page/users"}>Users</Link>
               </li>
               <li>
                 <Link href={"/page/product"}>Product</Link>
@@ -26,7 +26,7 @@ export default function Navbar() {
           </div>
 
           <div className="navbar-end">
-            <Link href={"/"}>
+            <Link href={"/page/profile"}>
               <Avatar/>
             </Link>
           </div>
