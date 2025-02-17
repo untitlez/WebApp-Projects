@@ -41,7 +41,7 @@ export default function UserEdit({ id, info, edit, handleClick }) {
       const response = await axios.delete(`https://679348b45eae7e5c4d8e2507.mockapi.io/user/${id}`, {data: id,})
       if (response.status === 200) {
         alert("Deleted!");
-        router.back();
+        router.push('/page/users')
       }
     } catch (error) {
       console.error("Cannot Delete:", error);

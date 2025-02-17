@@ -1,10 +1,11 @@
+import axios from "axios";
 import Link from "next/link";
 
 export default async function UsersPage() {
-  const res = await fetch("https://679348b45eae7e5c4d8e2507.mockapi.io/user");
-  const data = await res.json();
-  
-  return (
+  const response = await axios.get("https://679348b45eae7e5c4d8e2507.mockapi.io/user");
+  const data = response.data;
+
+return (
     <>
       <div className="overflow-x-auto my-8">
         <div className="flex justify-end mr-16 mb-4">
