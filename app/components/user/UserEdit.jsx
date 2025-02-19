@@ -6,12 +6,12 @@ import { useRouter } from "next/navigation";
  
 export default function UserEdit({ id, info, edit, handleClick }) {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    location: "",
-    image: ""
+    name: info.name || "",
+    email: info.email || "",
+    phone: info.phone || "",
+    company: info.company || "",
+    location: info.location || "",
+    image: info.image || ""
   });
 
   const router = useRouter()
