@@ -1,18 +1,53 @@
+import Link from "next/link";
 import ProductCard from "./ProductCard";
 
-export default function Cart({ addToCart, toggle, handleClick, handleRemove }) {
+export default function Cart({
+  addToCart,
+  toggle,
+  handleClick,
+  handleRemove,
+  totalPrice,
+}) {
   return (
     <>
       {toggle ? (
         <ProductCard />
       ) : (
         <div className="fill">
-          <button
-            onClick={handleClick}
-            className="btn btn-outline btn-accent mt-8"
-          >
-            Back
-          </button>
+          <div className="flex justify-between items-baseline">
+            {/* Button Left  */}
+            <button
+              onClick={handleClick}
+              className="btn btn-outline btn-accent mt-8"
+            >
+              Back
+            </button>
+
+            {/* Button Right  */}
+            <button
+              onClick={() => document.getElementById("my_modal_2").showModal()}
+              className="btn btn-accent text-center  mt-8 group btn-wide"
+            >
+              <p className="group-hover:hidden fd">Total: $ {totalPrice}</p>
+              <p className="hidden group-hover:grid fu">Pay Now</p>
+            </button>
+            <dialog id="my_modal_2" className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Hello !</h3>
+                <p className="py-4">Thank you for your time. Hopefully we can collaborate.</p>
+                <div className="modal-action">
+                  <Link href="/">
+                    <button className="btn">Done</button>
+                  </Link>
+                </div>
+              </div>
+              <form method="dialog" className="modal-backdrop">
+                <button>close</button>
+              </form>
+            </dialog>
+          </div>
+
+          {/* Cart List  */}
           <div className="overflow-x-auto my-8">
             {addToCart.length === 0 ? (
               <div className="flex flex-col items-center gap-8 my-16">
@@ -56,7 +91,7 @@ export default function Cart({ addToCart, toggle, handleClick, handleRemove }) {
                       </td>
                       <td>{item.flavor_profile}</td>
                       <td>{item.weight} g.</td>
-                      <th>{item.price}</th>
+                      <th>$ {item.price}</th>
                       <th>
                         <button
                           onClick={() => handleRemove(item.id, i)}

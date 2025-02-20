@@ -13,7 +13,7 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu rounded-box p-2 shadow hidden md:flex flex-row "
+              className="menu rounded-box p-2 shadow hidden md:flex flex-row gap-1"
             >
               <li>
                 <Link href={"/page/users"}>Users</Link>
