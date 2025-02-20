@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import UserInfo from "./UserInfo";
 import { useRouter } from "next/navigation";
+import UserImages from "./UserImages";
 
-export default function UserEdit({ id, info, edit, handleClick }) {
+export default function UserEdit({ id, info, edit, handleEdit }) {
+  const [select, setSelect] = useState("");
   const [formData, setFormData] = useState({
     name: info.name || "",
     email: info.email || "",
@@ -15,6 +17,16 @@ export default function UserEdit({ id, info, edit, handleClick }) {
   });
 
   const router = useRouter();
+
+  const handleSelect = (avatar) => {
+    setSelect(avatar.target.value);
+  };
+
+  useEffect(() => {
+    if (select) {
+      setFormData((prev) => ({ ...prev, image: select }));
+    }
+  }, [select]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -59,15 +71,19 @@ export default function UserEdit({ id, info, edit, handleClick }) {
       ) : (
         <div className="max-w-2xl w-full">
           <div className="flex justify-center gap-24 ">
-            {/* Avatar  */}
-            <div className="avatar flex-col gap-4 items-center mt-3">
+            {/* <div className="avatar flex-col gap-4 items-center mt-3">
               <div className="h-36 w-36 rounded-full">
                 <img
                   src={info.image || "/profile icon.png"}
                   alt="profile images"
                 />
               </div>
-            </div>
+            </div> */}
+            <UserImages
+              formData={formData}
+              select={select}
+              handleSelect={handleSelect}
+            />
 
             {/* Form  */}
             <form onSubmit={handleSubmit} className="form-control w-full">
@@ -142,7 +158,7 @@ export default function UserEdit({ id, info, edit, handleClick }) {
                 type="text"
                 name="image"
                 placeholder="Enter Image Address"
-                value={formData.image}
+                value={formData.image || select}
                 onChange={handleChange}
                 className="input input-bordered mb-2"
                 autoComplete="on"
@@ -160,7 +176,7 @@ export default function UserEdit({ id, info, edit, handleClick }) {
 
                 <div className="flex gap-4">
                   <button
-                    onClick={handleClick}
+                    onClick={handleEdit}
                     type="button"
                     className="btn btn-ghost btn-warning"
                   >

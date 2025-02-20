@@ -58,6 +58,7 @@ export default function UserAdd() {
             handleSelect={handleSelect}
           />
 
+          {/* Form  */}
           <form onSubmit={handleSubmit} className="form-control w-full">
             <label className="label">
               <span className="label-text">Name</span>
@@ -143,6 +144,7 @@ export default function UserAdd() {
               required
             />
 
+            {/* Button  */}
             <div className="flex justify-between w-full pt-12">
               <Link href="/page/users">
                 <button className="btn btn-ghost btn-warning">CANCEL</button>

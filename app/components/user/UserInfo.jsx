@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function UserInfo({ id, info }) {
   const [edit, setEdit] = useState(true);
 
-  const handleClick = () => {
+  const handleEdit = () => {
     setEdit((edit) => !edit);
   };
 
@@ -18,7 +18,7 @@ export default function UserInfo({ id, info }) {
             <Link href="/page/users">
               <button className="btn btn-ghost ">Back</button>
             </Link>
-            <button onClick={handleClick} className="btn btn-warning px-6">
+            <button onClick={handleEdit} className="btn btn-warning px-6">
               EDIT
             </button>
           </div>
@@ -75,7 +75,7 @@ export default function UserInfo({ id, info }) {
           </div>
         </div>
       ) : (
-        <UserEdit id={id} info={info} edit={edit} handleClick={handleClick} />
+        <UserEdit id={id} info={info} edit={edit} handleEdit={handleEdit} />
       )}
     </>
   );
