@@ -1,51 +1,67 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
 import UserImages from "./UserImages";
 
 export default function UserAdd() {
+  const [select, setSelect] = useState("/profile icon.png");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
     location: "",
-    image: ""
+    image: "",
   });
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value }); 
+  const handleSelect = (avatar) => {
+    setSelect(avatar.target.value);
   };
 
+  useEffect(() => {
+    if (select) {
+      setFormData((prev) => ({ ...prev, image: select }));
+    }
+  }, [select]);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://679348b45eae7e5c4d8e2507.mockapi.io/user' , formData )
+      const response = await axios.post(
+        "https://679348b45eae7e5c4d8e2507.mockapi.io/user",
+        formData
+      );
       if (response.status === 201) {
         alert("Success!");
-        router.push('/page/users');
+        router.push("/page/users");
       }
     } catch (error) {
       console.error("Failed:", error);
-    };
-  }
+    }
+  };
 
-return (
+  return (
     <>
       <div className="max-w-2xl w-full">
         <div className="flex justify-center gap-24">
-
-        <div className="avatar ml-3">
+          {/* <div className="avatar ml-3">
               <div className="h-36 w-36 rounded-full">
                 <img src={formData.image || "/profile icon.png" } alt="profile images"/>
               </div>
-            </div>
-          {/* <UserImages formData={formData}/> ค่อยกลับมาทำใหม่*/}
+            </div> */}
+          <UserImages
+            formData={formData}
+            select={select}
+            handleSelect={handleSelect}
+          />
 
           <form onSubmit={handleSubmit} className="form-control w-full">
             <label className="label">
@@ -89,7 +105,7 @@ return (
               onChange={handleChange}
               className="input input-bordered"
               autoComplete="on"
-              pattern="\d*"
+              pattern="([0-9]{3}-[0-9]{3}-[0-9]{4})|([0-9]{3}-[0-9]{7})|([0-9]{10})"
               required
             />
 
@@ -125,22 +141,23 @@ return (
               type="text"
               name="image"
               placeholder="Image Address"
-              value={formData.image}
+              value={formData.image || select}
               onChange={handleChange}
               className="input input-bordered mb-2"
               autoComplete="on"
               required
             />
 
-          <div className="flex justify-between w-full pt-12">
-            <Link href='/page/users'>
-                <button className="btn btn-ghost btn-warning">CANCEL</button></Link>
-                <button type="submit" className="btn btn-warning">SUBMIT</button>
-          </div>
-          
-        </form>
+            <div className="flex justify-between w-full pt-12">
+              <Link href="/page/users">
+                <button className="btn btn-ghost btn-warning">CANCEL</button>
+              </Link>
+              <button type="submit" className="btn btn-warning">
+                SUBMIT
+              </button>
+            </div>
+          </form>
         </div>
-
       </div>
     </>
   );
