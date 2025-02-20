@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
-
+import UserImages from "./UserImages";
 
 export default function UserAdd() {
   const [formData, setFormData] = useState({
@@ -39,12 +39,13 @@ return (
     <>
       <div className="max-w-2xl w-full">
         <div className="flex justify-center gap-24">
-            
-          <div className="avatar">
-            <div className="h-36 w-36 rounded-full box">
-              <img src={formData.image || "/profile icon.png"} alt="profile images"/>
+
+        <div className="avatar ml-3">
+              <div className="h-36 w-36 rounded-full">
+                <img src={formData.image || "/profile icon.png" } alt="profile images"/>
+              </div>
             </div>
-          </div>
+          {/* <UserImages formData={formData}/> ค่อยกลับมาทำใหม่*/}
 
           <form onSubmit={handleSubmit} className="form-control w-full">
             <label className="label">
@@ -80,14 +81,15 @@ return (
               <span className="label-text">Phone</span>
             </label>
             <input
-              type="text"
+              type="tel"
               name="phone"
               maxLength="12"
-              placeholder="x0x-xxx-x00x"
+              placeholder="012-345-6789"
               value={formData.phone}
               onChange={handleChange}
               className="input input-bordered"
               autoComplete="on"
+              pattern="\d*"
               required
             />
 

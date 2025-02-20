@@ -58,13 +58,6 @@ h4 {font-size: 36px;}
 h5 {font-size: 26px;}
 h6 {font-size: 20px;}
 
-ul,p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  list-style-type: disc;
-  list-style-position: inside;
-}
 
 .box {
   border-width: 1px;
@@ -90,7 +83,9 @@ ul,p {
   @apply grid place-items-center 
 }
 
-
+.avatar-list {
+  @apply rounded-full hover:ring-4 ring-current
+}
 /* Animations  */
 .fin { animation: fadein 1s linear }
 @keyframes fadein {

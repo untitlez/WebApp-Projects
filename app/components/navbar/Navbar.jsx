@@ -1,20 +1,19 @@
 import Link from "next/link";
 import MenuBar from "./MenuBar";
-import Avatar from "./Avatar";
 
-export default function Navbar(params) {
+export default function Navbar() {
   return (
     <>
       {/* Desktop  */}
       <div className="bg-base-200 w-full justify-items-center">
-        <nav className="navbar max-w-screen-xl pr-4">
+        <nav className="navbar max-w-screen-xl">
           <div className="navbar-start">
             <div className="lg:hidden">
-              <MenuBar/>
+              <MenuBar />
             </div>
             <ul
               tabIndex={0}
-              className="menu rounded-box p-2 shadow hidden md:flex flex-row "
+              className="menu rounded-box p-2 shadow hidden md:flex flex-row gap-1"
             >
               <li>
                 <Link href={"/page/users"}>Users</Link>
@@ -26,8 +25,12 @@ export default function Navbar(params) {
           </div>
 
           <div className="navbar-end">
-            <Link href={"/"}>
-              <Avatar/>
+            <Link href={"/page/profile"}>
+              <div className="avatar">
+                <div className="ring-info ring-offset-base-100 w-8 rounded-full ring ring-offset-2">
+                  <img src="/shiba.jpg" />
+                </div>
+              </div>
             </Link>
           </div>
         </nav>

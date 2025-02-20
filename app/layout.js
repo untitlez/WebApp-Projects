@@ -2,7 +2,7 @@ import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 
 export const metadata = {
-  title: "ลำบากวันนี้ พรุ่งนี้ก็ลำบาก",
+  title: "Example Web",
   description: "E-Commerce",
 };
 
@@ -11,9 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        <div className="fill">
-          {children}
-        </div>
+        <div className="fill">{children}</div>
       </body>
     </html>
   );
