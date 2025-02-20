@@ -34,7 +34,9 @@ export default function Cart({
             <dialog id="my_modal_2" className="modal">
               <div className="modal-box">
                 <h3 className="font-bold text-lg">Hello !</h3>
-                <p className="py-4">Thank you for your time. Hopefully we can collaborate.</p>
+                <p className="py-4">
+                  Thank you for your time. Hopefully we can collaborate.
+                </p>
                 <div className="modal-action">
                   <Link href="/">
                     <button className="btn">Done</button>

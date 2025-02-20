@@ -52,11 +52,6 @@ export default function UserAdd() {
     <>
       <div className="max-w-2xl w-full">
         <div className="flex justify-center gap-24">
-          {/* <div className="avatar ml-3">
-              <div className="h-36 w-36 rounded-full">
-                <img src={formData.image || "/profile icon.png" } alt="profile images"/>
-              </div>
-            </div> */}
           <UserImages
             formData={formData}
             select={select}

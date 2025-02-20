@@ -10,22 +10,26 @@ export default function UserInfo({ id, info }) {
     setEdit((edit) => !edit);
   };
 
-
-return (
+  return (
     <>
       {edit ? (
         <div className="max-w-2xl w-full">
-
           <div className="flex justify-end gap-4 mb-4">
             <Link href="/page/users">
-              <button className="btn btn-ghost ">Back</button></Link>
-              <button onClick={handleClick} className="btn btn-warning px-6">EDIT</button>
+              <button className="btn btn-ghost ">Back</button>
+            </Link>
+            <button onClick={handleClick} className="btn btn-warning px-6">
+              EDIT
+            </button>
           </div>
 
           <div className="flex justify-center gap-24 ">
             <div className="avatar">
               <div className="h-36 w-36 rounded-full">
-                <img src={info.image || "/profile icon.png"} alt="profile images"/>
+                <img
+                  src={info.image || "/profile icon.png"}
+                  alt="profile images"
+                />
               </div>
             </div>
 
@@ -68,16 +72,10 @@ return (
                 className="input input-bordered mb-2 pointer-events-none opacity-80"
               />
             </form>
-            
           </div>
         </div>
       ) : (
-        <UserEdit
-          id={id}
-          info={info}
-          edit={edit}
-          handleClick={handleClick}
-        />
+        <UserEdit id={id} info={info} edit={edit} handleClick={handleClick} />
       )}
     </>
   );

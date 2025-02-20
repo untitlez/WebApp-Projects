@@ -9,7 +9,9 @@ export default function ProductCard({ result }) {
   const [addToCart, setAddToCart] = useState([]);
   const [toggle, setToggle] = useState(true);
 
-  const totalPrice = addToCart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+  const totalPrice = addToCart
+    .reduce((sum, item) => sum + item.price, 0)
+    .toFixed(2);
 
   const handleClick = () => {
     setToggle((toggle) => !toggle);
