@@ -7,16 +7,14 @@ const inter = Inter({
 });
 export const metadata = {
   title: "Example Web",
-  description: "E-Commerce",
+  description: "Practice Website",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} data-theme="dark">
-          <div className="layout">
-            {children}
-        </div>
+        <div className="layout">{children}</div>
       </body>
     </html>
   );

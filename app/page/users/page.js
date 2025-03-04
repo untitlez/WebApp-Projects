@@ -9,7 +9,7 @@ export default async function UsersPage() {
 
   return (
     <>
-        <div className="main my-8">
+      <div className="main my-8">
         <table className="table">
           {/* head */}
           <thead>
@@ -19,10 +19,9 @@ export default async function UsersPage() {
               <th>Company</th>
               <th>Phone</th>
               <th>
-              <Link href="/page/users/new-user">
-            <button className="btn btn-warning px-5">Add</button>
-          </Link>
-
+                <Link href="/page/users/new-user">
+                  <button className="btn btn-warning px-5">Add</button>
+                </Link>
               </th>
             </tr>
           </thead>
@@ -67,7 +66,7 @@ export default async function UsersPage() {
             </tbody>
           ))}
         </table>
-        </div>
+      </div>
     </>
   );
 }

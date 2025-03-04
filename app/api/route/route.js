@@ -2,7 +2,6 @@
 
 // const API_URL = "https://679348b45eae7e5c4d8e2507.mockapi.io/user"
 
-
 // // GET
 // export async function GET() {
 //   try {
@@ -13,7 +12,6 @@
 //     return NextResponse.json({ error: error.message }, { status: 500 });
 //   }
 // }
-
 
 // // POST
 // export async function POST(req) {
@@ -41,7 +39,6 @@
 //   }
 // }
 
-
 // // PUT
 // export async function PUT(req) {
 //   try {
@@ -56,7 +53,6 @@
 //     return NextResponse.json({ error: error.message }, { status: 500 });
 //   }
 // }
-
 
 // // DELETE
 // export async function DELETE(req) {

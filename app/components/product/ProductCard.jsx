@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import Cart from "./Cart";
+import CartList from "./CartList";
+import PaymentBtn from "./PaymentBtn";
+import CartIcon from "./CartIcon";
 
-export default function ProductCard({ result }) {
-  const [data, setData] = useState(result);
+export default function ProductCard({ data }) {
   const [addToCart, setAddToCart] = useState([]);
   const [toggle, setToggle] = useState(true);
 
@@ -13,83 +14,63 @@ export default function ProductCard({ result }) {
     .reduce((sum, item) => sum + item.price, 0)
     .toFixed(2);
 
-  const handleClick = () => {
-    setToggle((toggle) => !toggle);
-  };
+  const handleClick = () => setToggle((toggle) => !toggle);
 
-  const handleRemove = (id, index) => {
-    const remove = addToCart.some((item, i) => item.id === id && i === index);
-    if (remove) {
-      setAddToCart(
-        addToCart.filter((item, i) => !(item.id === id && i === index))
-      );
-    }
+  const handleRemove = (id) => {
+    setAddToCart((prev) => prev.filter((item) => item.id !== id));
   };
 
   return (
     <>
       {toggle ? (
-        <div className="content items-center my-8">
-          <div className="flex justify-between items-baseline">
-            <p className="text-5xl font-semibold mt-8">Product</p>
-
-            {/* Cart Icon  */}
-            <div onClick={handleClick} className="btn btn-ghost">
-              <div className="indicator">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                <span className="badge badge-sm badge-accent indicator-item ">
-                  {addToCart.length || "0"}
-                </span>
-              </div>
-            </div>
+        <div className="main items-center my-8 gap-12">
+          <div className="w-full flex justify-between items-center">
+            <p className="text-5xl font-bold text-base-content px-2">Product</p>
+            <CartIcon addToCart={addToCart} handleClick={handleClick} />
           </div>
 
-          {/* Product List  */}
-          <div className="flex flex-wrap justify-evenly gap-8 my-8">
-            {data.map((item) => (
-              <div
-                key={item.id}
-                className="card bg-base-100 border border-base-content w-56 justify-between hover:scale-110"
-              >
-                <Link href={"/page/product/" + item.id}>
-                  <figure>
-                    <img src={item.image_url} alt={item.name} />
-                  </figure>
+          <div className="content lg:flex-row-reverse gap-6">
+            {/* Cart List  */}
+            <div className="hidden lg:block h-full w-1/3 bg-base-200 rounded-xl border border-base-content/50 p-4 shadow-xl">
+              <p className="text-center text-xl font-bold  border-b-2 border-base-content/50 py-3">
+                Order Detail
+              </p>
+              <CartList addToCart={addToCart} handleRemove={handleRemove} />
+              <PaymentBtn totalPrice={totalPrice} />
+            </div>
 
-                  <ul className="card-body p-4">
-                    <li className="card-title">{item.name}</li>
-                    <li className="text-base-content truncate">
-                      {item.flavor_profile}
-                    </li>
-                    <li className="text-accent font-medium text-lg truncate">
-                      $ {item.price}
-                    </li>
-                  </ul>
-                </Link>
-
-                <button
-                  onClick={() =>
-                    setAddToCart((addToCart) => [...addToCart, item])
-                  }
-                  className="btn btn-accent w-auto m-2"
+            {/* Product List  */}
+            <div className="w-full flex flex-wrap justify-evenly gap-4 lg:w-2/3">
+              {data.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex flex-col justify-stretch rounded-xl bg-base-200 border border-base-content/50 p-2 w-60 shadow-xl"
                 >
-                  ADD TO CART
-                </button>
-              </div>
-            ))}
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="object-scale-down bg-[#EDEBE9] rounded-xl shadow-md"
+                  />
+
+                  <div className="flex justify-between items-center gap-2 mt-2 mx-2">
+                    <ul>
+                      <li>{item.title}</li>
+                      <li className="text-accent font-medium ">
+                        $ {item.price}
+                      </li>
+                    </ul>
+                    <button
+                      onClick={() =>
+                        setAddToCart((addToCart) => [...addToCart, item])
+                      }
+                      className="btn btn-accent text-2xl"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ) : (
