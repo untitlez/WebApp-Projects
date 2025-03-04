@@ -1,14 +1,10 @@
-import { API_URL } from "@/app/api/apiConfig";
-import axios from "axios";
+import { productsData } from "@/app/api/products/route";
 import ProductCard from "@/app/components/product/ProductCard";
 
-export default async function ProductPage() {
-  const response = await axios.get(`${API_URL}`);
-  const result = response.data;
-
+export default function ProductPage() {
   return (
     <>
-      <ProductCard result={result} />
+      <ProductCard data={productsData} />
     </>
   );
 }
