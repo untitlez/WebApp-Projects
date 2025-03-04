@@ -19,22 +19,22 @@ export default function UserImages({ formData, select, handleSelect }) {
 
   return (
     <>
-      <div className="flex flex-col gap-6">
+      <div className="flex items-center justify-between gap-4 lg:flex-col">
         {/* Avatar Image  */}
-        <div className="avatar ml-3">
+        <div className="avatar">
           <div className="h-36 w-36 rounded-full">
             <img src={formData.image || select} alt="profile images" />
           </div>
         </div>
         {/* Avatar List  */}
         <div className="dropdown dropdown-bottom dropdown-end">
-          <div tabIndex={0} role="button" className="btn m-2 w-full">
+          <div tabIndex={0} role="button" className="btn">
             Change Images
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content list-none bg-base-100 rounded-lg z-[1] p-3 shadow w-72
-        grid grid-cols-3 gap-3 "
+            className="dropdown-content list-none bg-base-200 border border-base-content/20 rounded-lg z-[1] p-3 w-72
+        grid grid-cols-3 gap-3 mt-2"
           >
             {avatars.map((avatar) => (
               <li key={avatar.id}>
@@ -53,7 +53,7 @@ export default function UserImages({ formData, select, handleSelect }) {
                   <img
                     src={avatar.src}
                     alt={avatar.alt}
-                    className="w-20 h-20 rounded-full"
+                    className="w-20 h-20 rounded-full shadow-xl"
                   />
                 </label>
               </li>

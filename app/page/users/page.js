@@ -9,21 +9,21 @@ export default async function UsersPage() {
 
   return (
     <>
-      <div className="overflow-x-auto my-8">
-        <div className="flex justify-end mr-16 mb-4">
-          <Link href="/page/users/new-user">
-            <button className="btn btn-warning px-6">Add</button>
-          </Link>
-        </div>
+        <div className="main my-8">
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="bg-base-300 text-gray-400">
+            <tr className="bg-base-300 text-base-content">
               <th>No.</th>
               <th>Name</th>
               <th>Company</th>
               <th>Phone</th>
-              <th></th>
+              <th>
+              <Link href="/page/users/new-user">
+            <button className="btn btn-warning px-5">Add</button>
+          </Link>
+
+              </th>
             </tr>
           </thead>
           {data.map((user, index) => (
@@ -67,7 +67,7 @@ export default async function UsersPage() {
             </tbody>
           ))}
         </table>
-      </div>
+        </div>
     </>
   );
 }

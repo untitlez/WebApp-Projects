@@ -24,8 +24,8 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <div className="navbar-end">
-            <Link href={"/page/profile"}>
+          <div className="navbar-end px-8">
+            <Link href={"/"}>
               <div className="avatar">
                 <div className="ring-info ring-offset-base-100 w-8 rounded-full ring ring-offset-2">
                   <img src="/shiba.jpg" />

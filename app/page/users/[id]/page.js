@@ -9,7 +9,7 @@ export default async function UserPageId({ params }) {
 
   return (
     <>
-      <div className="fill flex justify-center py-8">
+      <div className="main h-screen items-center mt-24">
         <UserInfo id={params.id} info={info} />
       </div>
     </>

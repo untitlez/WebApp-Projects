@@ -13,7 +13,7 @@ export default function Cart({
       {toggle ? (
         <ProductCard />
       ) : (
-        <div className="fill">
+        <div className="content items-center my-8">
           <div className="flex justify-between items-baseline">
             {/* Button Left  */}
             <button

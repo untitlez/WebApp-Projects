@@ -14,7 +14,7 @@ export default function UserInfo({ id, info }) {
     <>
       {edit ? (
         <div className="max-w-2xl w-full">
-          <div className="flex justify-end gap-4 mb-4">
+          <div className="flex justify-end gap-4 mb-8">
             <Link href="/page/users">
               <button className="btn btn-ghost ">Back</button>
             </Link>
@@ -23,7 +23,7 @@ export default function UserInfo({ id, info }) {
             </button>
           </div>
 
-          <div className="flex justify-center gap-24 ">
+          <div className="max-w-2xl w-full flex flex-col items-center gap-12 lg:flex-row lg:items-start">
             <div className="avatar">
               <div className="h-36 w-36 rounded-full">
                 <img

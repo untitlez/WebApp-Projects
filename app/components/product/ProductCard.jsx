@@ -29,7 +29,7 @@ export default function ProductCard({ result }) {
   return (
     <>
       {toggle ? (
-        <div className="fill">
+        <div className="content items-center my-8">
           <div className="flex justify-between items-baseline">
             <p className="text-5xl font-semibold mt-8">Product</p>
 

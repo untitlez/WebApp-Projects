@@ -70,15 +70,7 @@ export default function UserEdit({ id, info, edit, handleEdit }) {
         <UserInfo />
       ) : (
         <div className="max-w-2xl w-full">
-          <div className="flex justify-center gap-24 ">
-            {/* <div className="avatar flex-col gap-4 items-center mt-3">
-              <div className="h-36 w-36 rounded-full">
-                <img
-                  src={info.image || "/profile icon.png"}
-                  alt="profile images"
-                />
-              </div>
-            </div> */}
+           <div className="max-w-2xl w-full flex flex-col gap-12 lg:flex-row lg:items-start">
             <UserImages
               formData={formData}
               select={select}

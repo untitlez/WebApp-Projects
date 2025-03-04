@@ -50,8 +50,7 @@ export default function UserAdd() {
 
   return (
     <>
-      <div className="max-w-2xl w-full">
-        <div className="flex justify-center gap-24">
+        <div className="max-w-2xl w-full flex flex-col gap-12 lg:flex-row lg:items-start">
           <UserImages
             formData={formData}
             select={select}
@@ -155,7 +154,6 @@ export default function UserAdd() {
             </div>
           </form>
         </div>
-      </div>
     </>
   );
 }

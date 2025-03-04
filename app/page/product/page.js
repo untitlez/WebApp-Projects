@@ -3,8 +3,8 @@ import axios from "axios";
 import ProductCard from "@/app/components/product/ProductCard";
 
 export default async function ProductPage() {
-  const response = await axios.get(`${API_URL}`);
-  const result = response.data;
+  const response = await fetch(`${API_URL}`);
+  const result = await response.json();
 
   return (
     <>
