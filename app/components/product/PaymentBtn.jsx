@@ -19,8 +19,8 @@ export default function PaymentBtn({ totalPrice }) {
             Thank you for your time. Hopefully we can collaborate.
           </p>
           <div className="modal-action">
-            <Link href="/">
-              <button className="btn">Done</button>
+            <Link href="/" className="btn">
+              Done
             </Link>
           </div>
         </div>

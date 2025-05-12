@@ -2,21 +2,32 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <>
-      <div data-theme="dark" className="main h-screen justify-center items-center">
-        <div className="flex flex-col gap-12 sm:flex-row md:gap-20">
-          <Link href="/page/users">
-            <button className="btn btn-outline btn-info btn-wide btn-lg hover:scale-125">
-              Users
-            </button>
-          </Link>
-          <Link href="/page/product">
-            <button className="btn btn-outline btn-accent btn-wide btn-lg hover:scale-125">
-              Product
-            </button>
-          </Link>
+    <div
+      className="hero min-h-screen"
+      style={{
+        backgroundImage:
+          "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+      }}
+    >
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-content text-neutral-content text-center">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+          <p className="mb-5">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
+          </p>
+          <div className="flex justify-self-center gap-4">
+            <Link href="/admin" className="btn">
+              Dash Baord
+            </Link>
+            <Link href="/shop" className="btn">
+             Coffee Shop
+            </Link>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
