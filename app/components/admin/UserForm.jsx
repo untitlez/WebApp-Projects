@@ -1,80 +1,12 @@
 "use client";
 
-import { useAction } from "@/app/lib/store/admin";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-import { UserImage } from "./UserImage";
-import { useEffect } from "react";
-import { kMaxLength } from "buffer";
+import { useAction } from "@/app/lib/store/admin";
+import { inputItems } from "@/app/lib/constant/admin/form";
 
-const inputItems = [
-  {
-    name: "name",
-    type: "text",
-    label: "Name:",
-    placeholder: "e.g. John Doe",
-    required: "Name: is required",
-  },
-  {
-    name: "job",
-    type: "text",
-    label: "Job:",
-    placeholder: "e.g. Frontend Developer",
-    required: "Job: is required",
-  },
-  {
-    name: "company",
-    type: "text",
-    label: "Company:",
-    placeholder: "e.g. ABC Corp",
-    required: "Company: is required",
-  },
-  {
-    name: "location",
-    type: "text",
-    label: "Location:",
-    placeholder: "e.g. New York City",
-  },
-  {
-    name: "email",
-    type: "text",
-    label: "Email:",
-    placeholder: "e.g. user@email.com",
-    required: "Email: is required",
-    pattern: {
-      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: "Please enter a valid email address.",
-    },
-  },
-  {
-    name: "phone",
-    type: "text",
-    label: "Phone:",
-    placeholder: "e.g. 099-012-3456",
-    required: "Phone: is required",
-    pattern: {
-      value: /^\d{10}$/,
-      message: "Please enter a valid Phone Number.",
-    },
-    max: {
-      value: 12,
-    },
-  },
-  {
-    name: "salary",
-    type: "number",
-    label: "Salary:",
-    placeholder: "e.g. 50000",
-    min: { value: 0, message: "Salary cannot be less than zero." },
-  },
-  {
-    name: "image",
-    type: "text",
-    label: "Image:",
-    placeholder: "Paste image URL",
-    className: "hidden",
-  },
-];
+import { UserImage } from "./UserImage";
 
 export const UserForm = ({ user, onSubmit }) => {
   const { edit, select } = useAction();
@@ -122,7 +54,7 @@ export const UserForm = ({ user, onSubmit }) => {
         {inputItems.map((item, i) => (
           <div key={item.name} className="my-2">
             <label
-              className={`input input-bordered flex items-center gap-4 sm:gap-8 text-sm sm:text-base ${item.className}`}
+              className={`input input-bordered flex items-center gap-4 sm:gap-8 text-sm sm:text-base shadow-md ${item.className}`}
             >
               <p>{item.label}</p>
               {edit ? (
@@ -132,12 +64,12 @@ export const UserForm = ({ user, onSubmit }) => {
                     autoFocus={i === 0}
                     type={item.type}
                     placeholder={item.placeholder}
-                    maxLength={item.max?.value}
+                    maxLength={item.maxLength}
                     {...register(item.name, {
                       required: item.required,
                       pattern: item.pattern,
-                      max: item.max,
                       min: item.min,
+                      max: item.max,
                     })}
                   />
                   {errors[item.name] && (

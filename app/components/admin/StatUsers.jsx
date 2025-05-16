@@ -46,7 +46,7 @@ export const StatUsers = ({ data }) => {
   return (
     <>
       {statItems.map((item, i) => (
-        <div key={i} className="stats shadow basis-1/3">
+        <div key={i} className="stats shadow-md basis-1/3">
           <div className="stat">
             <div className="stat-figure text-primary">{item.icon}</div>
             <div className="stat-title">{item.title}</div>

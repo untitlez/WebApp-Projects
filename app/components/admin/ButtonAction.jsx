@@ -1,7 +1,7 @@
 import { useAction } from "@/app/lib/store/admin";
 
 export const ButtonAction = ({
-  type = "button",
+  type,
   className,
   label,
   head,
@@ -14,7 +14,6 @@ export const ButtonAction = ({
   return (
     <>
       <button
-        type={type}
         className={className}
         onClick={() => document.getElementById(`${modalId}`).showModal()}
       >
@@ -36,6 +35,7 @@ export const ButtonAction = ({
                   <button className="btn">Close</button>
                   <button
                     className="btn btn-outline"
+                    type={type}
                     form={form}
                     onClick={action}
                   >

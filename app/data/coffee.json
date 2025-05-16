@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "name": "French Vanilla Fantasy",
+    "image": "/products/French-Vanilla-Fantasy.webp",
+    "description": "A creamy classic with a touch of French vanilla charm.",
+    "rating": 4.1,
+    "price": 13.11
+  },
+  {
+    "id": "2",
+    "name": "Almond Amore",
+    "image": "/products/Almond-Amore.webp",
+    "description": "Blended with roasted almonds for a nutty experience.",
+    "rating": 3.8,
+    "price": 8.95
+  },
+  {
+    "id": "3",
+    "name": "Cinnamon Swirl",
+    "image": "/products/Cinnamon-Swirl.webp",
+    "description": "Spiced cinnamon delight in every cup.",
+    "rating": 5,
+    "price": 11.27
+  },
+  {
+    "id": "4",
+    "name": "Raspberry Ripple",
+    "image": "/products/Raspberry-Ripple.webp",
+    "description": "Fruity raspberry sweetness swirled with bold coffee.",
+    "rating": 3.4,
+    "price": 10.32
+  },
+  {
+    "id": "5",
+    "name": "Tiramisu Temptation",
+    "image": "/products/Tiramisu-Temptation.webp",
+    "description": "Inspired by the beloved Italian dessert.",
+    "rating": 4.9,
+    "price": 12.37
+  },
+  {
+    "id": "6",
+    "name": "White Chocolate Winder",
+    "image": "/products/White-Chocolate-Winder.webp",
+    "description": "Smooth white chocolate blended to perfection.",
+    "rating": 3.2,
+    "price": 8.18
+  },
+  {
+    "id": "7",
+    "name": "Dark Roast Dynamite",
+    "image": "/products/Dark-Roast-Dynamite.webp",
+    "description": "Strong and bold for those who like it intense.",
+    "rating": 4.6,
+    "price": 10.15
+  },
+  {
+    "id": "8",
+    "name": "Irish Cream Infusion",
+    "image": "/products/Irish-Cream-Infusion.webp",
+    "description": "Creamy, rich, and a hint of Irish magic.",
+    "rating": 4.3,
+    "price": 8.76
+  },
+  {
+    "id": "9",
+    "name": "Pumpkin Spice Perfection",
+    "image": "/products/Pumpkin-Spice-Perfection.webp",
+    "description": "Perfect fall flavors in a comforting cup.",
+    "rating": 3.7,
+    "price": 12.61
+  },
+  {
+    "id": "10",
+    "name": "Colombian Comfort",
+    "image": "/products/Colombian-Comfort.webp",
+    "description": "Smooth body and mild flavor for everyday comfort.",
+    "rating": 5,
+    "price": 9.41
+  },
+  {
+    "id": "11",
+    "name": "Ethiopian Emerald",
+    "image": "/products/Ethiopian-Emerald.webp",
+    "description": "Bright and floral with notes of citrus.",
+    "rating": 3.6,
+    "price": 9.86
+  },
+  {
+    "id": "12",
+    "name": "Decaf-Delight",
+    "image": "/products/Decaf-Delight.webp",
+    "description": "All the taste, none of the caffeine crash.",
+    "rating": 4.8,
+    "price": 8.41
+  }
+]

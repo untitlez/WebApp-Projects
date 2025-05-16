@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { redirect, useParams, useRouter } from "next/navigation";
 
 import axios from "axios";
-import { API_URL } from "@/app/lib/api";
+import { API_URL } from "@/app/lib/constant/admin/api";
 import { useAction } from "@/app/lib/store/admin";
 
 import { Alert } from "@/app/components/admin/Alert";
@@ -106,7 +106,7 @@ export default function UserIdPage() {
           {edit ? (
             <>
               <ButtonAction
-                type="button"
+                type="submit"
                 className="btn btn-ghost text-error"
                 label="Delete"
                 head="Confirm Delete"
@@ -114,16 +114,12 @@ export default function UserIdPage() {
                 action={handleDelete}
               />
               <div className="flex gap-4">
-                <button
-                  type="button"
-                  className="btn btn-ghost"
-                  onClick={onCancel}
-                >
+                <button className="btn btn-ghost" onClick={onCancel}>
                   Cancel
                 </button>
                 <ButtonAction
                   form="user-form"
-                  type="button"
+                  type="submit"
                   className="btn btn-outline btn-success"
                   label="Submit"
                   head="Confirm Submit"
@@ -134,18 +130,13 @@ export default function UserIdPage() {
           ) : (
             <>
               <ButtonAction
-                type="button"
                 className="btn"
                 label="Back"
                 head="Leaving now will discard your progress"
                 text="Do you want to continue?"
                 action={onBack}
               />
-              <button
-                type="button"
-                className="btn btn-outline px-8"
-                onClick={onEdit}
-              >
+              <button className="btn btn-outline px-8" onClick={onEdit}>
                 Edit
               </button>
             </>

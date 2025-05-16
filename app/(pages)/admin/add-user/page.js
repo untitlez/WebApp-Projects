@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { redirect, useRouter } from "next/navigation";
 
 import axios from "axios";
-import { API_URL } from "@/app/lib/api";
+import { API_URL } from "@/app/lib/constant/admin/api";
 import { useAction } from "@/app/lib/store/admin";
 
 import { Alert } from "@/app/components/admin/Alert";
@@ -16,6 +16,7 @@ export default function AddUserPage() {
   const router = useRouter();
 
   useEffect(() => {
+    setSelect("");
     setEdit(true);
   }, []);
 
@@ -56,7 +57,6 @@ export default function AddUserPage() {
       <div className="flex justify-end my-12">
         <div className="flex justify-between w-full lg:w-1/2">
           <ButtonAction
-            type="button"
             className="btn btn-outline"
             label="Cancel"
             head="Leaving now will discard your progress"
@@ -64,7 +64,7 @@ export default function AddUserPage() {
             action={onCancel}
           />
           <ButtonAction
-            type="button"
+            type="submit"
             form="user-form"
             className="btn btn-outline btn-success"
             label="Submit"

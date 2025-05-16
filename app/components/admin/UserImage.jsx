@@ -1,24 +1,7 @@
 "use client";
 
 import { useAction } from "@/app/lib/store/admin";
-
-const imageItems = [
-  { id: "avatar1", src: "/avatar/ace.jpg" },
-  { id: "avatar2", src: "/avatar/sabo.jpg" },
-  { id: "avatar3", src: "/avatar/lufy.jpg" },
-  { id: "avatar4", src: "/avatar/sanji.jpg" },
-  { id: "avatar5", src: "/avatar/shank.jpg" },
-  { id: "avatar6", src: "/avatar/zoro.jpg" },
-  { id: "avatar7", src: "/avatar/bepo.jpg" },
-  { id: "avatar8", src: "/avatar/brook.jpg" },
-  { id: "avatar9", src: "/avatar/chopper.jpg" },
-  { id: "avatar10", src: "/avatar/garp.jpg" },
-  { id: "avatar11", src: "/avatar/jinbe.jpg" },
-  { id: "avatar12", src: "/avatar/koby.jpg" },
-  { id: "avatar13", src: "/avatar/rayleigh.jpg" },
-  { id: "avatar14", src: "/avatar/mihawk.jpg" },
-  { id: "avatar15", src: "/avatar/roger.jpg" },
-];
+import { imageItems } from "@/app/lib/constant/admin/form";
 
 export const UserImage = ({ user }) => {
   const { edit, select, setSelect } = useAction();
@@ -31,7 +14,7 @@ export const UserImage = ({ user }) => {
     <div className="flex lg:flex-col justify-center items-center gap-8 my-12">
       {/* Avatar Image  */}
       <div className="avatar">
-        <div className="h-36 w-36 lg:h-56 lg:w-56 rounded-full">
+        <div className="h-36 w-36 lg:h-56 lg:w-56 rounded-full shadow-xl">
           <img
             alt="profile images"
             src={select || user?.image || "/profile-icon.png"}
