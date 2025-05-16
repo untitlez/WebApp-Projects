@@ -1,7 +1,11 @@
 export const metadata = {
   title: "Coffee Shop",
   description: "Practice Website",
-  favicon: "",
+  icons: {
+    icon: "/favicon/coffee-cup.png",
+    apple: "/favicon/coffee-cup.png",
+    shortcut: "/favicon/coffee-cup.png",
+  },
 };
 
 export default function CoffeeShopPageLayout({ children }) {

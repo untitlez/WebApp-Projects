@@ -1,7 +1,11 @@
 export const metadata = {
   title: "Admin System",
   description: "Practice Website",
-  favicon: "",
+  icons: {
+    icon: "/favicon/admin.png",
+    apple: "/favicon/admin.png",
+    shortcut: "/favicon/admin.png",
+  },
 };
 
 export default function AdminPageLayout({ children }) {
