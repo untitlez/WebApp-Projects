@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,7 +9,11 @@ const inter = Inter({
 export const metadata = {
   title: "Web App | Home",
   description: "Practice Website",
-  favicon: "",
+  icons: {
+    icon: "/favicon/project.png",
+    apple: "/favicon/project.png",
+    shortcut: "/favicon/project.png",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -16,6 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className} data-theme="sunset">
         {children}
+        <Analytics/>
       </body>
     </html>
   );
