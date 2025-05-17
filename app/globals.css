@@ -17,21 +17,25 @@ body {
 }
 
 .box {
-  @apply border-2 border-base-content
+  @apply border-2 border-base-content;
+}
+
+.box2 {
+  @apply border-2 border-white;
 }
 
 .layout {
-  @apply h-full w-full flex flex-col items-center gap-12 lg:gap-16
+  @apply h-full w-full flex flex-col items-center gap-12 lg:gap-16;
 }
 
 .main {
-  @apply w-full max-w-screen-xl flex flex-col px-4 sm:px-8
+  @apply w-full max-w-screen-xl flex flex-col px-4 sm:px-8;
 }
 
 .content {
-  @apply w-full flex flex-col px-4 lg:px-0
+  @apply w-full flex flex-col px-4 lg:px-0;
 }
 
 .avatar-list {
-  @apply rounded-full hover:ring-4 ring-current
+  @apply rounded-full hover:ring-4 ring-current;
 }
