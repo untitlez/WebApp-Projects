@@ -50,29 +50,26 @@ export default function AddUserPage() {
   };
 
   return (
-    <>
+    <div className="max-w-screen-md w-full h-full sm:content-center">
       {alert && <Alert type={alert.type} text={alert.text} />}
-
       <UserForm onSubmit={onSubmit} />
-      <div className="flex justify-end my-12">
-        <div className="flex justify-between w-full lg:w-1/2">
-          <ButtonAction
-            className="btn btn-outline"
-            label="Cancel"
-            head="Leaving now will discard your progress"
-            text="Do you want to continue?"
-            action={onCancel}
-          />
-          <ButtonAction
-            type="submit"
-            form="user-form"
-            className="btn btn-outline btn-success"
-            label="Submit"
-            head="Confirm Submit"
-            text="Are you sure you want to confirm and submit the changes?"
-          />
-        </div>
+      <div className="flex justify-between w-full my-8">
+        <ButtonAction
+          className="btn btn-outline"
+          label="Cancel"
+          head="Leaving now will discard your progress"
+          text="Do you want to continue?"
+          action={onCancel}
+        />
+        <ButtonAction
+          type="submit"
+          form="user-form"
+          className="btn btn-outline btn-success"
+          label="Submit"
+          head="Confirm Submit"
+          text="Are you sure you want to confirm and submit the changes?"
+        />
       </div>
-    </>
+    </div>
   );
 }

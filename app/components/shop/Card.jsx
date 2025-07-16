@@ -26,8 +26,8 @@ export const Card = ({ data }) => {
             />
           </figure>
           <div className="flex flex-col justify-between h-full w-full">
-              <p className="font-medium">{item.name}</p>
-              <p className="text-base-content/60">{item.description}</p>
+            <p className="font-medium">{item.name}</p>
+            <p className="text-base-content/60">{item.description}</p>
             <button
               className="btn btn-sm sm:btn-md btn-primary w-full mt-2 sm:mt-4 sm:text-base group"
               onClick={() => handleAdd(item)}

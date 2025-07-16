@@ -10,8 +10,12 @@ export const metadata = {
 
 export default function AdminPageLayout({ children }) {
   return (
-    <main id="admin" className="grid min-h-screen p-6" data-theme="luxury">
-      <div className="flex flex-col gap-4 p-8 rounded-xl bg-base-300 border border-base-content/75">
+    <main
+      id="admin"
+      className="flex justify-center min-h-screen p-6"
+      data-theme="luxury"
+    >
+      <div className="w-full max-w-screen-xl flex flex-col items-center p-8 rounded-xl bg-base-300 border border-base-content/75">
         {children}
       </div>
     </main>

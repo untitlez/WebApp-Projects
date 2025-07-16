@@ -10,9 +10,9 @@ export default async function AdminPage() {
   const data = await res.json();
 
   return (
-    <>
+    <div className="w-full space-y-4">
       <section className="flex justify-between items-center">
-        <h1 className="font-semibold lg:text-2xl">Dash Board</h1>
+        <h1 className="font-semibold lg:text-2xl">Admin System</h1>
         <div className="flex items-center gap-2">
           <ToggleTheme id="admin" main="luxury" sub="winter" />
           <Link
@@ -23,12 +23,12 @@ export default async function AdminPage() {
           </Link>
         </div>
       </section>
-      <section className="flex flex-col lg:flex-row gap-4">
+      <section className="w-full flex flex-col lg:flex-row gap-4">
         <StatUsers data={data} />
       </section>
       <section>
         <TableUsers data={data} />
       </section>
-    </>
+    </div>
   );
 }

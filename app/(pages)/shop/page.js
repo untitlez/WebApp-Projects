@@ -16,13 +16,13 @@ export default async function CoffeeShopPage() {
     <>
       <section className="flex flex-col gap-8 max-w-screen-2xl">
         <div className="flex items-center">
-        <div className="flex items-center w-72 lg:w-64">
+          <div className="flex items-center w-72 lg:w-64">
             <p className="w-full font-semibold text-primary text-lg sm:text-2xl">
-            Coffee Shop
-          </p>
-            <ToggleTheme id="shop" main="coffee" sub="autumn"/>
-        </div>
-            <Cart />
+              Coffee Shop
+            </p>
+            <ToggleTheme id="shop" main="coffee" sub="autumn" />
+          </div>
+          <Cart />
         </div>
         <div className="flex flex-wrap justify-between gap-4">
           <Card data={data} />

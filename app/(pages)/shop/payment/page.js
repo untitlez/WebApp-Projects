@@ -55,7 +55,9 @@ export default function PaymentPage() {
   return (
     <section className="h-full w-full flex justify-center gap-24">
       <div className="space-y-8 w-full max-w-xl lg:basis-1/2">
-        <p className="font-semibold text-primary text-lg sm:text-2xl">Payment</p>
+        <p className="font-semibold text-primary text-lg sm:text-2xl">
+          Payment
+        </p>
 
         {/* Payment Option  */}
         <div className="flex justify-between gap-4 bg-base-200 rounded-xl shadow-md p-1 border border-base-content/75">

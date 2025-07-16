@@ -4,13 +4,12 @@ import { BsCartX } from "react-icons/bs";
 export const CartList = () => {
   const { cart, setRemoveCart } = useShop();
   const handleRemove = (index) => setRemoveCart(index);
-  
+
   return (
     <>
       {cart.length === 0 ? (
         <div className="flex flex-col items-center gap-4 my-16">
-    
-    <BsCartX size="48"/>
+          <BsCartX size="48" />
           <p className="font-semibold">Select Product</p>
         </div>
       ) : (

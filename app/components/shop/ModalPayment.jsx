@@ -7,10 +7,15 @@ export const ModalPayment = ({ ref, setLoading }) => {
         <div className="modal-box border border-base-content/75">
           <div>
             <h3 className="font-bold text-lg">Payment Confirmation</h3>
-            <p className="py-4">Are you sure you want to proceed with the payment?</p>
+            <p className="py-4">
+              Are you sure you want to proceed with the payment?
+            </p>
             <div className="modal-action">
               <form method="dialog" className="flex gap-4">
-                <button className="btn btn-outline" onClick={() => setLoading(false)}>
+                <button
+                  className="btn btn-outline"
+                  onClick={() => setLoading(false)}
+                >
                   Cancel
                 </button>
                 <Link
@@ -18,7 +23,7 @@ export const ModalPayment = ({ ref, setLoading }) => {
                   className="btn btn-primary"
                   onClick={() => setLoading(false)}
                 >
-                  Confirm 
+                  Confirm
                 </Link>
               </form>
             </div>

@@ -10,7 +10,8 @@ export default {
 
   daisyui: {
     // themes: ["luxury", "winter"],
-    themes: ["light",
+    themes: [
+      "light",
       "dark",
       "cupcake",
       "bumblebee",
@@ -41,6 +42,7 @@ export default {
       "winter",
       "dim",
       "nord",
-      "sunset",],
+      "sunset",
+    ],
   },
 };

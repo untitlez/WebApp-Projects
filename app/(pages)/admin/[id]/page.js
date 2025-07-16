@@ -97,52 +97,49 @@ export default function UserIdPage() {
   };
 
   return (
-    <>
+    <div className="max-w-screen-md w-full h-full sm:content-center">
       {alert && <Alert type={alert.type} text={alert.text} />}
-
       <UserForm user={user} onSubmit={onSubmit} />
-      <div className="flex justify-end my-12">
-        <div className="flex justify-between w-full lg:w-1/2">
-          {edit ? (
-            <>
-              <ButtonAction
-                type="submit"
-                className="btn btn-ghost text-error"
-                label="Delete"
-                head="Confirm Delete"
-                text="Are you sure you want to delete this account?"
-                action={handleDelete}
-              />
-              <div className="flex gap-4">
-                <button className="btn btn-ghost" onClick={onCancel}>
-                  Cancel
-                </button>
-                <ButtonAction
-                  form="user-form"
-                  type="submit"
-                  className="btn btn-outline btn-success"
-                  label="Submit"
-                  head="Confirm Submit"
-                  text="Are you sure you want to confirm and submit the changes?"
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              <ButtonAction
-                className="btn"
-                label="Back"
-                head="Leaving now will discard your progress"
-                text="Do you want to continue?"
-                action={onBack}
-              />
-              <button className="btn btn-outline px-8" onClick={onEdit}>
-                Edit
+      <div className="flex justify-between my-8">
+        {edit ? (
+          <>
+            <ButtonAction
+              type="submit"
+              className="btn btn-ghost text-error"
+              label="Delete"
+              head="Confirm Delete"
+              text="Are you sure you want to delete this account?"
+              action={handleDelete}
+            />
+            <div className="flex flex-wrap justify-end gap-4">
+              <button className="btn btn-ghost" onClick={onCancel}>
+                Cancel
               </button>
-            </>
-          )}
-        </div>
+              <ButtonAction
+                form="user-form"
+                type="submit"
+                className="btn btn-outline btn-success"
+                label="Submit"
+                head="Confirm Submit"
+                text="Are you sure you want to confirm and submit the changes?"
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <ButtonAction
+              className="btn"
+              label="Back"
+              head="Leaving now will discard your progress"
+              text="Do you want to continue?"
+              action={onBack}
+            />
+            <button className="btn btn-outline px-8" onClick={onEdit}>
+              Edit
+            </button>
+          </>
+        )}
       </div>
-    </>
+    </div>
   );
 }

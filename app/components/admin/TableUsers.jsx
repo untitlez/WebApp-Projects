@@ -17,7 +17,6 @@ export const TableUsers = ({ data }) => {
         </tr>
       </thead>
       <tbody>
-        
         {/* row */}
         {data
           .slice()
@@ -26,17 +25,17 @@ export const TableUsers = ({ data }) => {
             <tr key={user.id}>
               <td>{data.length - i}</td>
               <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-circle h-12 w-12">
-                        <img src={user.image} alt={user.name} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{user.name}</div>
-                      <div className="text-sm opacity-50">{user.job}</div>
+                <div className="flex items-center gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-circle h-12 w-12">
+                      <img src={user.image} alt={user.name} />
                     </div>
                   </div>
+                  <div>
+                    <div className="font-bold">{user.name}</div>
+                    <div className="text-sm opacity-50">{user.job}</div>
+                  </div>
+                </div>
               </td>
               <td className="hidden xl:table-cell">
                 {user.company}
@@ -48,7 +47,12 @@ export const TableUsers = ({ data }) => {
               <td className="hidden sm:table-cell">{user.email}</td>
               <td className="hidden sm:table-cell">{user.phone}</td>
               <td>
-                <Link href={`/admin/${user.id}`} className="btn btn-sm lg:btn text-xs lg:text-base">View</Link>
+                <Link
+                  href={`/admin/${user.id}`}
+                  className="btn btn-sm lg:btn text-xs lg:text-base"
+                >
+                  View
+                </Link>
               </td>
             </tr>
           ))}
