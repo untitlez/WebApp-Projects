@@ -43,6 +43,7 @@ http://localhost:3000
 
 ## 🧱 Project Structure
 
+```plaintext
 /app
 │
 ├── (pages)
@@ -92,3 +93,7 @@ http://localhost:3000
 ├── layout.js
 ├── loading.js
 └── page.js
+```
+
+---
+
