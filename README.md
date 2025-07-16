@@ -35,7 +35,7 @@ npm run dev
 ```
 
 ### 4. Open in Browser
-```bash
+```plaintext
 http://localhost:3000
 ```
 
@@ -58,7 +58,7 @@ http://localhost:3000
 │       ├── payment/page.js
 │       └── success/page.js
 │
-├── component
+├── components
 │   ├── OrbBG.jsx
 │   ├── ToggleTheme.jsx
 │   ├── admin/
