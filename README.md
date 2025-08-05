@@ -18,7 +18,6 @@
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
-
 ```bash
 git clone https://github.com/your-org/webapp-admin-coffee.git
 cd webapp-admin-coffee
@@ -42,7 +41,6 @@ http://localhost:3000
 ---
 
 ## 🧱 Project Structure
-
 ```plaintext
 /app
 │
