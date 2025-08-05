@@ -1,4 +1,4 @@
-# 🌐 WebApp – Built with Next.js App Router (Admin Dashboard & Coffee Shop)
+# 🌐 Admin Dashboard & Coffee Shop - WebApp Project (Next.js App Router)
 
 > Modern, minimal, and scalable WebApp built with Next.js App Router, designed for internal dashboards and e-commerce-style coffee shop platforms.
 
