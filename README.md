@@ -19,8 +19,8 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-org/webapp-admin-coffee.git
-cd webapp-admin-coffee
+git clone https://github.com/untitlez/WebApp-Projects.git
+cd WebApp-Projects
 ```
 
 ### 2. Install dependencies
