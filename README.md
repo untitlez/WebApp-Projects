@@ -1,4 +1,4 @@
-# 🌐 WebApp – Built with Next.js App Router (Admin Dashboard & Coffee Shop)
+# 🌐 Admin Dashboard & Coffee Shop - WebApp Project (Next.js App Router)
 
 > Modern, minimal, and scalable WebApp built with Next.js App Router, designed for internal dashboards and e-commerce-style coffee shop platforms.
 
@@ -18,10 +18,9 @@
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
-
 ```bash
-git clone https://github.com/your-org/webapp-admin-coffee.git
-cd webapp-admin-coffee
+git clone https://github.com/untitlez/WebApp-Projects.git
+cd WebApp-Projects
 ```
 
 ### 2. Install dependencies
@@ -35,5 +34,64 @@ npm run dev
 ```
 
 ### 4. Open in Browser
-
+```plaintext
 http://localhost:3000
+```
+
+---
+
+## 🧱 Project Structure
+```plaintext
+/app
+│
+├── (pages)
+│   ├── admin
+│   │   ├── layout.js
+│   │   ├── page.js
+│   │   ├── add-user/page.js
+│   │   └── [id]/page.js
+│   └── shop
+│       ├── layout.js
+│       ├── page.js
+│       ├── payment/page.js
+│       └── success/page.js
+│
+├── components
+│   ├── OrbBG.jsx
+│   ├── ToggleTheme.jsx
+│   ├── admin/
+│   │   ├── Alert.jsx
+│   │   ├── ButtonAction.jsx
+│   │   ├── StatUsers.jsx
+│   │   ├── TableUsers.jsx
+│   │   ├── UserForm.jsx
+│   │   └── UserImage.jsx
+│   └── shop/
+│       ├── BankTransferPayment.jsx
+│       ├── Card.jsx
+│       ├── Cart.jsx
+│       ├── CartList.jsx
+│       ├── CreditCardPayment.jsx
+│       ├── ModalPayment.jsx
+│       └── QRCodePayment.jsx
+│
+├── data
+│   └── coffee.json
+│
+├── lib
+│   ├── constant
+│   │   ├── admin/api.js
+│   │   ├── admin/form.js
+│   │   └── shop/payment.js
+│   └── store
+│       ├── admin.js
+│       └── shop.js
+│
+├── globals.css
+├── layout.js
+├── loading.js
+└── page.js
+```
+
+---
+
